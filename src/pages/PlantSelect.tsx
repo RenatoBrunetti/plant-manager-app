@@ -1,6 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import { ActivityIndicator, FlatList, Platform, SafeAreaView, StyleSheet, Text, View } from 'react-native';
+import {
+  ActivityIndicator,
+  FlatList,
+  Platform,
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  View
+} from 'react-native';
 import { useNavigation } from '@react-navigation/core';
+import { MaterialIcons } from '@expo/vector-icons';
+import { PlantProps } from '../libs/storage';
 
 import { EnvironmentButton } from '../components/EnvironmentButton';
 import { Header } from '../components/Header';
@@ -14,20 +24,6 @@ import fonts from '../styles/fonts';
 interface EnvironmentProps {
   key: string
   title: string
-}
-
-interface PlantProps {
-  id: number
-  name: string
-  about: string
-  water_tips: string
-  photo: string
-  environments: string[]
-  frequency: PlantPropsFrequency
-}
-interface PlantPropsFrequency {
-  times: number
-  repeat_every: string
 }
 
 const alphabeticallySort = (property: string) =>
@@ -62,8 +58,9 @@ export const PlantSelect = () => {
     //data.sort(alphabeticallySort('name'));
 
     if(!data){
-      setLoading(true) ;
+      setLoading(true);
     }
+
     if(page>1){
       setPlants(oldValue => [...oldValue, ...data]);
       setfilteredPlants(oldValue => [...oldValue, ...data]);
@@ -71,6 +68,7 @@ export const PlantSelect = () => {
       setPlants(data);
       setfilteredPlants(data);
     }
+
     setLoading(false);
     setLoadingMore(false);
   };
@@ -79,9 +77,8 @@ export const PlantSelect = () => {
     if(distance < 1){
       return;
     }
-
     setLoadingMore(true);
-    setPage(oldValue => oldValue+1);
+    setPage(lastPage => lastPage+1);
     fetchPlants();
   };
 
@@ -107,7 +104,7 @@ export const PlantSelect = () => {
 
   useEffect(() => {
     fetchPlants();
-  },[]);
+  }, []);
 
   if(loading){
     return <Load/>;
@@ -152,13 +149,19 @@ export const PlantSelect = () => {
             showsVerticalScrollIndicator={false}
             numColumns={2}
             onEndReachedThreshold={0.1}
-            onEndReached={({ distanceFromEnd }) => {
-              handleFetchMore(distanceFromEnd);
-            }}
+            onEndReached={({ distanceFromEnd }) => handleFetchMore(distanceFromEnd)}
             ListFooterComponent={
               loadingMore
-                ? <ActivityIndicator color={colors.green}/>
-                : <></>
+                ? <View style={styles.loadingArea}>
+                  <ActivityIndicator color={colors.green}/>
+                </View>
+                : <View style={styles.loadingIcon}>
+                  <MaterialIcons
+                    name='more-horiz'
+                    color={colors.gray}
+                    size={20}
+                  />
+                </View>
             }
           />
         </View>
@@ -196,12 +199,25 @@ const styles = StyleSheet.create({
     height: 40,
     justifyContent: 'center',
     paddingBottom: 5,
-    marginLeft: 32,
-    marginVertical: 32
+    marginVertical: 24,
+    paddingHorizontal: 32
   },
   plants: {
     flex: 1,
     paddingHorizontal: 32,
     justifyContent: 'center'
+  },
+  loadingArea: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingTop: 10,
+    paddingBottom: 15
+  },
+  loadingIcon: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingBottom: 2
   }
 });
