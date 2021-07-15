@@ -13,6 +13,7 @@ Now you can do this easily with **PlantManager**.<br>
 ## Table of Contents
 
 - [About the Project](#about-the-project)
+  - [Screens](#screens)
   - [Built With](#built-with)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
@@ -24,6 +25,32 @@ Now you can do this easily with **PlantManager**.<br>
 ## Abouth the Project
 
 **PlantManager** is a mobile application built with **React Native**, **Expo** and **Typescript**.
+
+### Screens
+
+- Splash<br>
+  <img src="https://renatobrunetti.com.br/public/.github/plantmanager/plantmanager-01-github.jpg" width="400px">
+
+- First access<br>
+  <img src="https://renatobrunetti.com.br/public/.github/plantmanager/plantmanager-02-github.jpg" width="400px">
+
+- Identification<br>
+  <img src="https://renatobrunetti.com.br/public/.github/plantmanager/plantmanager-03-github.jpg" width="400px">
+
+- Loading animation<br>
+  <img src="https://renatobrunetti.com.br/public/.github/plantmanager/plantmanager-04-github.jpg" width="400px">
+
+- Select plants<br>
+  <img src="https://renatobrunetti.com.br/public/.github/plantmanager/plantmanager-05-github.jpg" width="400px">
+
+- Save plants<br>
+  <img src="https://renatobrunetti.com.br/public/.github/plantmanager/plantmanager-06-github.jpg" width="400px">
+
+- My plants<br>
+  <img src="https://renatobrunetti.com.br/public/.github/plantmanager/plantmanager-07-github.jpg" width="400px">
+
+- Delete plant<br>
+  <img src="https://renatobrunetti.com.br/public/.github/plantmanager/plantmanager-08-github.jpg" width="400px">
 
 ### Built With
 
