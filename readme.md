@@ -28,14 +28,6 @@ Now you can do this easily with **PlantManager**.<br>
 
 ### Screens
 
-|||
-|:---:|:---:|
-|Splash<br><img src="https://renatobrunetti.com.br/public/.github/plantmanager/plantmanager-01-github.jpg" width="300px">|Main<br><img src="https://renatobrunetti.com.br/public/.github/plantmanager/plantmanager-02-github.jpg" width="300px">|
-|Identification<br><img src="https://renatobrunetti.com.br/public/.github/plantmanager/plantmanager-03-github.jpg" width="300px">|Loading animation<br><img src="https://renatobrunetti.com.br/public/.github/plantmanager/plantmanager-04-github.jpg" width="300px">|
-|Select plants<br><img src="https://renatobrunetti.com.br/public/.github/plantmanager/plantmanager-05-github.jpg" width="300px">|Save plants<br><img src="https://renatobrunetti.com.br/public/.github/plantmanager/plantmanager-06-github.jpg" width="300px">|
-|Save plants<br><img src="https://renatobrunetti.com.br/public/.github/plantmanager/plantmanager-06-github.jpg" width="300px">|My plants<br><img src="https://renatobrunetti.com.br/public/.github/plantmanager/plantmanager-07-github.jpg" width="300px">|
-|Delete plant<br><img src="https://renatobrunetti.com.br/public/.github/plantmanager/plantmanager-08-github.jpg" width="300px">||
-
 ### Built With
 
 - [Node.js](https://nodejs.org/)
@@ -44,6 +36,7 @@ Now you can do this easily with **PlantManager**.<br>
 - [Expo](https://expo.io/)
 
 ## Getting Started
+
 ### Prerequisites
 
 - Node.js
@@ -66,6 +59,7 @@ yarn
 ## Build and Start
 
 1- Create an environment file (**.env**) in the root folder:
+
 ```sh
 # Put your ip number here
 API_IP=000.000.00.00
@@ -74,12 +68,14 @@ API_PORT=3333
 ```
 
 2- Start **json-server**
+
 ```sh
 # Put the same ip number and port here
 json-server ./src/services/server.json --host 000.000.00.00 --port 3333
 ```
 
 3- Start Project
+
 ```sh
 yarn start
 ```
@@ -91,8 +87,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 ## Contact
 
 Author: Renato Brunetti<br>
-E-mail: [development@renatobrunetti.com.br](mailto:development@renatobrunetti.com.br)<br>
-Social: [LinkedIn](https://linkedin.com/in/RenatoCarapiaBrunetti/)
+[LinkedIn](https://linkedin.com/in/RenatoCarapiaBrunetti/)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 
